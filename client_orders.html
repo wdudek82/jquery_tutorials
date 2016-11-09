@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/coffee_orders.css" />
+    <title>Diageo API Ajax Test</title>
+</head>
+<body>
+    <h1>Diageo API Ajax Test</h1>
+
+    <h4>Add a Client Information</h4>
+    <p>
+        email: <input type="email" id="email">
+        adult: <input type="checkbox" id="is_adult">
+        marketing accepted: <input type="checkbox" id="marketing_accepted">
+        processing accepted: <input type="checkbox" id="processing_accepted">
+
+
+        dupa: <input type="checkbox" id="dupa"/>
+        <button id="add_order">Add!</button>
+    </p>
+
+    <h2>Mailing List</h2>
+    <ul id="clients"></ul>
+
+    <template id="client-template">
+        <li id="{{id}}">
+            <p>
+                <strong>id:</strong> {{id}}
+                <button data-id="{{id}}" class="remove">x</button>
+                <button data-id="{{id}}" class="editClient noedit">Edit</button>
+                <button data-id="{{id}}" class="saveEdit edit">Save</button>
+                <button data-id="{{id}}" class="cancelEdit edit">Cancel</button>
+            </p>
+            <p>
+                <strong>email: </strong>
+                <span class="noedit email">{{email}}</span>
+                <input class="edit email" type="email"/>,
+
+                <strong>adult: </strong>
+                <span class="noedit is_adult">{{is_adult}}</span>
+                <input class="edit is_adult" type="checkbox"/>,
+
+                <strong>merketing: </strong>
+                <span class="noedit marketing_accepted">{{marketing_accepted}}</span>
+                <input class="edit marketing_accepted" type="checkbox"/>,
+
+                <strong>processing: </strong>
+                <span class="noedit processing_accepted">{{processing_accepted}}</span>
+                <input class="edit processing_accepted" type="checkbox"/>
+            </p>
+        </li>
+    </template>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/coffee_orders.js"></script>
+    <script src="bower_components/mustache.js/mustache.min.js"></script>
+</body>
+</html>
